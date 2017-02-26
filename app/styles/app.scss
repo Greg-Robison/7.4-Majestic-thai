@@ -1,0 +1,102 @@
+
+// Bootstrap Variables
+$icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Import Bootstrap
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+body{
+
+  // background-image: url('../images/banner-thailand.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: scroll;
+  background-image: radial-gradient(#E4CA9A, #FAB283);
+  color: white;
+  font-family: 'Cinzel Decorative', cursive;
+}
+body::after {
+  content: "";
+  background: url('../images/thai.jpg');
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-bottom: 11px solid #D2622B;
+  margin-bottom: 313px;
+}
+li{
+  list-style: none;
+}
+p{
+  color: black;
+}
+.heading{
+  font-size: 85px;
+  z-index: 10;
+}
+.heading2{
+  font-size: 35px;
+  color: #FC2818;
+  font-weight: bolder;
+  z-index: 10;
+}
+.sub-heading{
+  font-size: 45px;
+  margin-top: 200px;
+  color: black;
+}
+.entry{
+  color: black;
+}
+.order-box{
+  margin-top: 25px;
+  margin-bottom: 15px;
+  width: 400px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 8px;
+  color: black;
+  font-weight: bolder;
+  font-size: 15px;
+}
+.drinks{
+
+  margin-top: -479px;
+  border-top: 3px solid #D2622B;
+}
+.special{
+
+  border-top: 3px solid #D2622B;
+  margin-top: 280px;
+}
+.order{
+float: right;
+background-image: linear-gradient(#D2622B, #9A8B2C);
+border-style: none;
+}
+.total{
+  background-image: linear-gradient(#D2622B, #9A8B2C);
+  border-style: none;
+}
+.pay{
+  padding-bottom: 35px;
+}
+.price{
+  font-size: 20px;
+}
