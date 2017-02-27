@@ -211,7 +211,7 @@ var OrderBox = React.createClass({
     return(
       <div className="col-md-6">
 
-        <div className="order-box">{items}</div>
+        <div className="order-box">Your Order...{items}</div>
         <form className="pay form-inline">
           <div className=" form-group">
             <label className="sr-only" htmlFor="exampleInputAmount">Amount (in dollars)</label>
