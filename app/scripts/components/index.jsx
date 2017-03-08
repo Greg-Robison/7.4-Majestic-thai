@@ -194,30 +194,25 @@ var Drinks = React.createClass({
 var OrderBox = React.createClass({
   render(){
     var self = this;
+    var total = 0
     var items = this.props.orderCollection.map(function(item){
-
+        total += Number(item.get('price'));
       return(
         <li key={item.cid}>{item.get('dish')}...{item.get('price')} </li>
       );
-      // calculateTotal: function(){
-      //   var subTotal = this.reduce(function(accum,i){
-      //     return accum + i .get('price')
-      // }, 0  );
-      // return subTotal.toFixed(2)
-      //
-      // }
+      
     });
-    console.log('items', {items});
+    console.log(total);
     return(
       <div className="col-md-6">
 
         <div className="order-box">Your Order...{items}</div>
         <form className="pay form-inline">
           <div className=" form-group">
-            <label className="sr-only" htmlFor="exampleInputAmount">Amount (in dollars)</label>
+            <label className="sr-only" htmlFor="exampleInputAmount">Amounts (in dollars)</label>
               <div className="input-group">
               <div className="input-group-addon">$</div>
-                <input type="text" className="form-control" id="exampleInputAmount" placeholder="Amount" />
+                <span type="text" className="form-control" id="exampleInputAmount"> {total.toFixed(2)}  </span>
 
               </div>
           </div>
