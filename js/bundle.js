@@ -196,30 +196,25 @@ var Drinks = React.createClass({displayName: "Drinks",
 var OrderBox = React.createClass({displayName: "OrderBox",
   render(){
     var self = this;
+    var total = 0
     var items = this.props.orderCollection.map(function(item){
-
+        total += Number(item.get('price'));
       return(
         React.createElement("li", {key: item.cid}, item.get('dish'), "...", item.get('price'), " ")
       );
-      // calculateTotal: function(){
-      //   var subTotal = this.reduce(function(accum,i){
-      //     return accum + i .get('price')
-      // }, 0  );
-      // return subTotal.toFixed(2)
-      //
-      // }
+      
     });
-    console.log('items', {items});
+    console.log(total);
     return(
       React.createElement("div", {className: "col-md-6"}, 
 
         React.createElement("div", {className: "order-box"}, "Your Order...", items), 
         React.createElement("form", {className: "pay form-inline"}, 
           React.createElement("div", {className: " form-group"}, 
-            React.createElement("label", {className: "sr-only", htmlFor: "exampleInputAmount"}, "Amount (in dollars)"), 
+            React.createElement("label", {className: "sr-only", htmlFor: "exampleInputAmount"}, "Amounts (in dollars)"), 
               React.createElement("div", {className: "input-group"}, 
               React.createElement("div", {className: "input-group-addon"}, "$"), 
-                React.createElement("input", {type: "text", className: "form-control", id: "exampleInputAmount", placeholder: "Amount"})
+                React.createElement("span", {type: "text", className: "form-control", id: "exampleInputAmount"}, " ", total.toFixed(2), "  ")
 
               )
           ), 
